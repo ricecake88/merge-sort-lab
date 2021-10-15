@@ -1,7 +1,15 @@
-var chai = require('chai');
-var sinon = require('sinon');
-// change to give addresses of head,
-// write function called get head.
+try {
+  window
+} catch (e) {
+  var chai = require('chai');
+  var sinon = require('sinon');
+  // change to give addresses of head,
+  // write function called get head.
+} finally {
+  afterEach(function() {
+    expect.restoreSpies();
+  });
+
 
 describe('#findMinAndRemoveSorted', function() {
   it("should return the smallest element of an array", function() {
@@ -31,3 +39,4 @@ describe('#mergeSort', function() {
     expect(mergeSort(unsorted)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
   });
 });
+}
